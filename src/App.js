@@ -5,6 +5,10 @@ import Counter from './components/Counter';
 import CounterHooks from './components/CounterHooks';
 import FormHooks from './components/FormHooks';
 import ItemHooks from './components/ItemHooks';
+import EffectHooks from './components/EffectHooks';
+import MouseEventEffect from './components/MouseEventEffect';
+// import DataFetch from './components/DataFetch';
+import DataFetchById from './components/DataFetchById';
 
 const Container = styled.div`
   display: flex;
@@ -19,6 +23,10 @@ const App = () => {
       <CounterHooks />
       <FormHooks />
       <ItemHooks />
+      <EffectHooks />
+      <MouseEventEffect />
+      {/* <DataFetch /> */}
+      <DataFetchById />
     </Container>
   );
 };
