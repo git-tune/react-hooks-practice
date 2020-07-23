@@ -7,24 +7,7 @@ const ComponentF = () => {
 
   return (
     <div>
-      <div>
-        {user.name}: {langage}
-      </div>
-      {/* //   <UserContext.Consumer>
-    //     {(user) => {
-    //       return (
-    //         <LanguageContext.Consumer>
-    //           {(langage) => {
-    //             return (
-    //               <div>
-    //                 {user.name}: {langage}
-    //               </div>
-    //             );
-    //           }}
-    //         </LanguageContext.Consumer>
-    //       );
-    //     }}
-    //   </UserContext.Consumer> */}
+      {user.name}: {langage}
     </div>
   );
 };
