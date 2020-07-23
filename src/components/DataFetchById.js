@@ -6,6 +6,7 @@ const DataFetchById = () => {
   const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
+    setLoading(true);
     const response = await fetch(
       `http://jsonplaceholder.typicode.com/posts/${id}`
     );
