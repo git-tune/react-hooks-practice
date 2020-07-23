@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import styled from 'styled-components';
+import Counter from './components/Counter';
+import CounterHooks from './components/CounterHooks';
+import FormHooks from './components/FormHooks';
+import ItemHooks from './components/ItemHooks';
 
-function App() {
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Counter />
+      <CounterHooks />
+      <FormHooks />
+      <ItemHooks />
+    </Container>
   );
-}
+};
 
 export default App;
