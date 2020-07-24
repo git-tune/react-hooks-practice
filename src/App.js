@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useReducer, createContext } from 'react';
 import './App.css';
 import styled from 'styled-components';
-import CounterReducer from './components/CounterReducer';
+// import CounterReducer from './components/CounterReducer';
 // import Counter from './components/Counter';
 // import CounterHooks from './components/CounterHooks';
 // import FormHooks from './components/FormHooks';
@@ -11,6 +11,9 @@ import CounterReducer from './components/CounterReducer';
 // import DataFetch from './components/DataFetch';
 // import DataFetchById from './components/DataFetchById';
 // import ComponentC from './components/ComponentC';
+import ComponentA from './components/ComponentA';
+import ComponentB from './components/ComponentB';
+import ComponentC from './components/ComponentC';
 
 const Container = styled.div`
   display: flex;
@@ -18,16 +21,37 @@ const Container = styled.div`
   align-items: center;
 `;
 
-// export const UserContext = createContext();
-// export const LanguageContext = createContext();
+export const CountContext = createContext();
+
+const initialState = {
+  firstCounter: 0,
+};
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'increment1':
+      return { ...state, firstCounter: state.firstCounter + action.value };
+    case 'decrement1':
+      return { ...state, firstCounter: state.firstCounter - action.value };
+    case 'reset':
+      return initialState;
+    default:
+      return state;
+  }
+};
 
 const App = () => {
-  //   const [user, setUser] = useState({ name: 'yamada', age: '32' });
-  //   const [language, setLanguage] = useState('日本語');
+  const [count, dispatch] = useReducer(reducer, initialState);
 
   return (
     <Container>
-      <CounterReducer />
+      <CountContext.Provider
+        value={{ countState: count, countDispatch: dispatch }}
+      >
+        <h1>count: {count.firstCounter}</h1>
+        <ComponentA />
+        <ComponentB />
+        <ComponentC />
+      </CountContext.Provider>
     </Container>
   );
 };

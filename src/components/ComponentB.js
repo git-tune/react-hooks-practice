@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { CountContext } from '../App';
 
-const ComponentC = () => {
+const ComponentB = () => {
   const countContext = useContext(CountContext);
   return (
     <div>
@@ -26,4 +26,4 @@ const ComponentC = () => {
   );
 };
 
-export default ComponentC;
+export default ComponentB;
